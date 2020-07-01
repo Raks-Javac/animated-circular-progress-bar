@@ -1,0 +1,226 @@
+
+.skill-label{
+    display: flex;
+    justify-content: center;
+}
+
+.skill-label > h3 
+{
+    font-size: 40px;
+    border-bottom: 9px solid #2c3e50;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 200;
+}
+
+/*Skill bar*/
+svg
+{
+    width: 150px;
+    height: 150px;
+    z-index: 1000;
+}
+svg > circle
+{
+  width:  100%;
+  height:  100%;
+  fill: none;
+  stroke: #191919;
+  stroke-width: 7;
+  stroke-linecap: round;
+  transform: translate(5px,5px);
+} 
+svg > circle:nth-child(2)
+{
+  stroke-dasharray:440;
+  stroke-dashoffset:440;
+}
+@keyframes progress {
+    0%{
+
+  stroke-dasharray:440;
+  stroke-dashoffset:440;
+    }
+   
+}
+.card:nth-child(1) circle:nth-child(2)
+{
+    stroke-dashoffset: calc(440 - (440*90)/100);
+  stroke: red;
+  animation: progress ease-out 2s;
+}
+
+
+
+.card:nth-child(2) circle:nth-child(2)
+{
+    stroke-dashoffset: calc(440 - (440*85)/100);
+  stroke: blue;
+  animation: progress ease-out 2s;
+}
+
+.card:nth-child(3) circle:nth-child(2)
+{
+    stroke-dashoffset: calc(440 - (440*60)/100);
+  stroke:yellow;
+  animation: progress ease-out 2s;
+}
+
+.card:nth-child(4) circle:nth-child(2)
+{
+    stroke-dashoffset: calc(440 - (440*90)/100);
+  stroke: lightskyblue;
+  animation: progress ease-out 2s;
+}
+
+.content{
+display: flex;
+justify-content: center;
+align-items: center;
+justify-content: space-evenly;
+/* background-color: #2c3e50; */
+flex-wrap: wrap;
+min-height: 100vh;
+}
+.container{
+/* position: relative; */
+widows: 900px;
+display: flex;
+justify-content: space-around;
+}
+.container .card 
+{
+    position: relative;
+    width: 400px;
+    /* background: linear-gradient(0deg,#1b1b1b,#222,#1b1b1b); (if you feel like designing the background) */
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    height: 300px;
+    border-radius: 4px;
+    text-align: center ;
+    overflow: hidden;
+    transition: 0.5s;
+    border: 0.5px solid #2c3e50;
+    border-radius: 50px;
+    margin-top: 10px;
+}
+.card:hover
+{
+    transform:  translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.5);
+}
+/* .container .card:before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    background: #2c3e50;
+    pointer-events: none;
+    z-index: 1;  
+} */
+.percent
+{
+    /* position: relative; */
+    width: 150px;
+    height: 150px ;
+    border-radius: 50%;
+    box-shadow: inset 0 0 50px #000;
+}
+.number
+{
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 19px;
+}
+.percemt > .number > h2
+{
+    color: #777;
+    font-weight: 700;
+    font-size: 40px;
+    transition: 1s;
+}
+.card:hover .percent .number h2 
+{
+    color: #2c3e50;
+    font-size: 45px;
+    transition: ease-out 1s;
+}
+
+
+.card:nth-child(1):hover .percent .number h2
+{
+    color: red;
+    font-size: 45px;
+    transition: ease-out 1s;
+}
+
+
+.card:nth-child(2):hover .percent .number h2
+{
+    color: blue;
+    font-size: 45px;
+    transition: ease-out 1s;
+}
+
+.card:nth-child(3):hover .percent .number h2
+{
+    color: yellow;
+    font-size: 45px;
+    transition: ease-out 1s;
+}
+
+
+.card:nth-child(4):hover .percent .number h2
+{
+    color: lightblue;
+    font-size: 45px;
+    transition: ease-out 1s;
+}
+
+
+.card .percent .number h2 span
+{
+    color: black;
+    font-size: 15px;
+    transition: ease-out 1s;
+}
+.text
+{
+    color: #000;
+    font-weight: 700;
+    margin-top: 20px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 1s;
+}
+.card:hover .text
+{
+   display: block;
+}
+
+
+
+
+.content-image{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 6px;
+}
+.content-image:hover{
+    box-shadow: 3px 3px 3px 3px grey;
+    transition: 0.3s ease-out;
+}
